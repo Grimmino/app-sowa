@@ -1,10 +1,19 @@
-html, body {
-  height: 100%;
-  background: #123123;
-}
+//header
+@import url('../../app/sw-header/sw-header.scss');
+@import url('../../app/sw-header/logo/logo.scss');
 
-.home {
-  width: 100px;
-  height: 100px;
-  background: url("../img/home.png");
+//content
+@import url('../../app/sw-content/sw-content.scss');
+@import url('../../app/sw-content/sidebar/sidebar.scss');
+
+//buttons
+@import url('../../app/btn/btn.scss');
+
+//popup
+@import url('../../app/popup/popup.scss');
+
+
+
+body {
+  margin: 0;
 }

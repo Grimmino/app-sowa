@@ -10,12 +10,14 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const middleware = require('webpack-dev-middleware');
+
 var isProduction = (process.env.NODE_ENV === 'production');
 
 
 //module settings - настройка модуля
 module.exports = {
-    //бфзовый путь к проекту
+    //базовый путь к проекту
     context: path.resolve(__dirname, 'src'),
 
     //точки входы js
