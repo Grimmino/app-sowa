@@ -1,0 +1,11 @@
+html, body {
+  height: 100%;
+  background: #123123; }
+
+.home {
+  width: 100px;
+  height: 100px;
+  background: url(../img/home.png); }
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zY3NzL3NyYy9zY3NzL3N0eWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFZO0VBQ1osb0JBQW1CLEVBQ3BCOztBQUVEO0VBQ0UsYUFBWTtFQUNaLGNBQWE7RUFDYixtQ0FDRCIsImZpbGUiOiIuL2Nzcy9hcHAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaHRtbCwgYm9keSB7XHJcbiAgaGVpZ2h0OiAxMDAlO1xyXG4gIGJhY2tncm91bmQ6ICMxMjMxMjM7XHJcbn1cclxuXHJcbi5ob21lIHtcclxuICB3aWR0aDogMTAwcHg7XHJcbiAgaGVpZ2h0OiAxMDBweDtcclxuICBiYWNrZ3JvdW5kOiB1cmwoXCIuLi9pbWcvaG9tZS5wbmdcIik7XHJcbn0iXSwic291cmNlUm9vdCI6IiJ9*/
