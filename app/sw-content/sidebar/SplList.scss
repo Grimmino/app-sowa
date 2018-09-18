@@ -1,0 +1,14 @@
+.SplList {
+  display: flex;
+  flex-direction: row;
+}
+.SplList__title {
+  flex: 1;
+}
+.SplList__close {
+  height: 20px;
+  width: 20px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  margin-right: 10px;
+}

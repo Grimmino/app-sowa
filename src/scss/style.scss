@@ -2,12 +2,17 @@
 @import url('../../app/sw-header/sw-header.scss');
 @import url('../../app/sw-header/logo/logo.scss');
 
+
 //content
 @import url('../../app/sw-content/sw-content.scss');
 @import url('../../app/sw-content/sidebar/sidebar.scss');
+@import url('../../app/sw-content/sidebar/SplList.scss');
+@import url('../../app/sw-content/sidebar/NotSplList.scss');
+
 
 //buttons
 @import url('../../app/btn/btn.scss');
+
 
 //popup
 @import url('../../app/popup/popup.scss');
