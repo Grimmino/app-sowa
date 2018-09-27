@@ -1,24 +1,36 @@
+//vars
+@import "../fonts/fonts.scss";
+//fonts
+@import "../../app/vars/vars.scss";
 //header
-@import url('../../app/sw-header/sw-header.scss');
-@import url('../../app/sw-header/logo/logo.scss');
+@import "../../app/sw-header/sw-header.scss";
+@import "../../app/sw-header/logo/logo.scss";
+@import "../../app/sw-header/profile/profile.scss";
+@import "../../app/sw-header/burger/burger.scss";
 
-
-//content
-@import url('../../app/sw-content/sw-content.scss');
-@import url('../../app/sw-content/sidebar/sidebar.scss');
-@import url('../../app/sw-content/sidebar/SplList.scss');
-@import url('../../app/sw-content/sidebar/NotSplList.scss');
-
+//page
+@import "../../app/sw-page/sw-page.scss";
+//page - sidebar
+@import "../../app/sw-page/sidebar/sidebar.scss";
+@import "../../app/sw-page/sidebar/sidebar__profile/sidebar__profile.scss";
+//page - content
+@import "../../app/sw-page/content/content.scss";
 
 //buttons
-@import url('../../app/btn/btn.scss');
-
+@import "../../app/btn/btn.scss";
 
 //popup
-@import url('../../app/popup/popup.scss');
+@import "../../app/popup/popup.scss";
+
+//media
+@import "../../app/media/media.scss";
+
+//light mode
+@import "../../app/light/light.scss";
 
 
 
 body {
   margin: 0;
+  background: linear-gradient(45deg, $secondclr, $mainclr);
 }

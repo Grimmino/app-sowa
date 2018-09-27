@@ -1,0 +1,23 @@
+@media all and ( max-width: 800px ) {
+    .btn {
+        padding: 20px 0;
+    }
+    .logo {
+        padding: 20px 0 20px 40px;
+        font-size: 30pt;
+    }
+    .sw-page {
+        flex-direction: column;
+    }
+    .sidebar {
+        padding-bottom: 50px; 
+        font-size: 40px;
+    }
+    .ListTitle {
+        padding: 10px 0;
+    }
+    .content {
+        height: calc( 100vh - 44px );
+    }   
+}
+  

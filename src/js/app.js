@@ -1,27 +1,64 @@
+//var
+var SideBar = document.querySelector(".sidebar");
+//scripts document loaded
+$(document).ready(
+    function(){
+        $("#sidebar").load('../../app/sidebar_profile.html');
+    }
+);
+
 //popup
-document.querySelector(".create-list").addEventListener("click",ShowPopup_SelectList);
+var CreatList = document.querySelector(".btn__create-list");
+
+CreatList.addEventListener("click",ShowPopup_SelectList);
 function ShowPopup_SelectList() {
-    document.querySelector(".popup-select-list").style = "visibility: visible";
+    document.querySelector(".popup-select-list").style = "display: block";
 }
 document.querySelector(".close").addEventListener("click",CloseAllPopup);
 function CloseAllPopup() {
-    document.querySelector(".popup").style = "visibility: hidden";
+    document.querySelector(".popup").style = "display: none";
+}
+
+
+//burger
+document.querySelector(".burger").addEventListener("click",ShowSidebar);
+
+function ShowSidebar() {
+    var classcheck = SideBar.classList.contains("sidebar-active");
+        ( classcheck !== true ) ? 
+        (SideBar.classList.add("sidebar-active")) 
+        : (SideBar.classList.remove("sidebar-active"));
 }
 
 
 //добавляем список
 var ChoiceList = document.querySelectorAll(".addList");
+
 ChoiceList.forEach( function(el) {
     el.addEventListener("click",addList);
 
-    function addList() {
-        if (el.className === "addList addSplList") {
-            alert ("создаем обычный список!")
+    function addList () {
+        var newLi = document.createElement('div');
+        elClassName = el.classList[1];
+        if (elClassName === "addSplList") {
+            newLi.className = "SplList";
         } else {
-            alert ("создаем НЕобычный список!")
+            newLi.className = "NotSplList";
+            
         }
-    }
+
+        SideBar.insertBefore(newLi, CreatList);
+        document.querySelector(".popup").style = "display: block";
+      };
 });
 
+//sidebar
+var BtnActiveited = document.querySelector(".btn__create-list");
+BtnActiveited.addEventListener("click",BtnActive);
 
-
+function BtnActive() {
+    var SidebarClschek = BtnActiveited.classList.contains("btn__create-list_active");
+        ( SidebarClschek !== true ) ? 
+        (BtnActiveited.classList.add("btn__create-list_active")) 
+        : (BtnActiveited.classList.remove("btn__create-list_active"));
+}

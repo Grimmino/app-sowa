@@ -1,12 +1,21 @@
 .btn {
-  color: #ffffff;
+  border: none;
   text-align: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #ffffff;
   cursor: pointer;
-}
+  color: #ffffff;
+  font-size: 15px;
+  &:hover {
+    color: #000000;
+  }
 
-.btn:hover {
-  color: #000000;
-  background: #ffffff;
+  &__create-list {
+    background: none;
+    //background: $sdbr-btn-clr;
+    width: 100%;
+    border-bottom: 1px solid $secondclr;
+    border-top: 1px solid $secondclr;
+    &_active {
+      @include sdbr-btn-active;
+    }
+  }
 }

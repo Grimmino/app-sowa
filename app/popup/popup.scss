@@ -1,37 +1,25 @@
 .popup {
-  visibility: hidden;
-  position: absolute;
-  top: 50px;
-  left: calc(50% - 200px);
-  width: 400px;
-}
-.popup-content {
-  width: 80%;
-  margin: 0 auto;
-  background: #000000;
-  border: 1px solid #ffffff;
-  height: 400px;
-}
-.popup-content > :nth-child(1n+2) {
-  border-bottom: 1px solid #ffffff;
-  color: #ffffff;
-  padding: 10px 0;
-  text-align: center;
-  cursor: pointer;
-}
-.popup-content > div:hover {
-  color: #000000;
-  background: #ffffff;
-  border-color: #000000;
-}
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: calc(50% - 150px);
+  width: 300px;
+  border-top: 5px solid #43d1fc;
+  border-bottom: 5px solid #43d1fc;
 
-.close {
-  position: absolute;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  border: 1px solid #ffffff;
-  background: #000000;
-  cursor: pointer;
+  &__content {
+    background: #000000;
+    & > div {
+      color: #ffffff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 20px;
+      cursor: pointer;
+      &:hover {
+        color: #000000;
+        background: #ffffff;
+        border-color: #000000;
+      }
+    }
+  }
 }

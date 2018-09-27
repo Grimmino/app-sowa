@@ -1,6 +1,6 @@
 //basik vars - переменные
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 
 //additional plugins - доп. плагины
@@ -9,8 +9,6 @@ const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-const middleware = require('webpack-dev-middleware');
 
 var isProduction = (process.env.NODE_ENV === 'production');
 
@@ -47,12 +45,17 @@ module.exports = {
         rules: [
             //scss
             {
-                test: /\.scss$/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
+                    'style-loader',
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: { sourceMap: true }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {sourceMap: true }
                     },
 
                     {
@@ -98,6 +101,11 @@ module.exports = {
     },
 
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            jquery: 'jquery'
+        }),
         new MiniCssExtractPlugin({
             filename: "./css/[name].css",
         }),
