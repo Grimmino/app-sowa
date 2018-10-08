@@ -1,0 +1,9 @@
+.icon {
+    &--ei-star {
+        fill: #ffffff!important;
+        padding: 0 20px;
+        &:hover {
+            fill: #3fc2ff!important;
+        }
+    }
+}

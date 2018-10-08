@@ -1,0 +1,16 @@
+.sw-header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $secondclr;
+  color: #ffffff;
+
+  &__profile {
+    flex: 1;
+  }
+
+  &__switchmode{
+    width: 100px;
+    cursor: pointer;
+  }
+}
+

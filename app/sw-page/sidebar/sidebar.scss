@@ -1,0 +1,31 @@
+.sidebar {
+  position: relative;
+  display: flex;
+  font-size: 20px;
+
+  &__profile {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: linear-gradient(0deg, $profile-secondclr, $profile-mainclr 70%);
+    height: 100vh;
+    &-active {
+      display: block;
+    }
+  }
+}
+
+
+
+
+.NotSplList, .SplList {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ffffff;
+}
+.ListTitle {
+  flex: 1;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}

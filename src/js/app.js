@@ -1,11 +1,5 @@
 //var
-var SideBar = document.querySelector(".sidebar");
-//scripts document loaded
-$(document).ready(
-    function(){
-        $("#sidebar").load('../../app/sidebar_profile.html');
-    }
-);
+var SideBar = document.querySelector(".sidebar__profile");
 
 //popup
 var CreatList = document.querySelector(".btn__create-list");
@@ -24,10 +18,10 @@ function CloseAllPopup() {
 document.querySelector(".burger").addEventListener("click",ShowSidebar);
 
 function ShowSidebar() {
-    var classcheck = SideBar.classList.contains("sidebar-active");
+    var classcheck = SideBar.classList.contains("sidebar__profile-active");
         ( classcheck !== true ) ? 
-        (SideBar.classList.add("sidebar-active")) 
-        : (SideBar.classList.remove("sidebar-active"));
+        (SideBar.classList.add("sidebar__profile-active")) 
+        : (SideBar.classList.remove("sidebar__profile-active"));
 }
 
 
