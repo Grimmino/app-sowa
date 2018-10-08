@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, $secondclr, $mainclr);
+}
+
+.form {
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0 auto;
+	max-width: 662px;
+}

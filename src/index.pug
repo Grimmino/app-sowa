@@ -1,0 +1,23 @@
+extends pug/base
+
+append vars
+	//- ...
+
+block content
+	block header
+	header.sw-header
+		include pug/app/sw-header/sw-header.pug
+	block page
+	main.sw-page
+		block sidebar
+		.sw-sidebar
+			include pug/app/sw-page/sw-sidebar/sw-sidebar-main.pug
+			include pug/app/sw-page/sw-sidebar/sw-sidebar-profile.pug 
+		block content
+		.sw-content#content
+			include pug/app/sw-page/sw-content/sw-content.pug
+	block footer
+	footer.footer
+	block popup
+		include pug/app/popup/popup.pug
+

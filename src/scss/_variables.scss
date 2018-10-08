@@ -1,0 +1,36 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+
+// COLORS----------
+//base
+$mainclr: #053850;
+$secondclr: #1fa1a5;
+
+//sidebar
+$sdbr-btn-clr: #2f89b3;
+$sdbr-btn-clr-hover: #2d3e46;
+//sidebar-profile
+$profile-font-clr: #ffffff;
+$profile-title-clr: #00aeff;
+$profile-mainclr: #002a3d;
+$profile-secondclr: #177ead;
+
+//btn
+$bgclr: #000;
+$bgclr-hover: #fff;
+//sidebar-btn
+//sm-sidebarmain
+$sm-bgclr: #000;
+$sm-bgclr-hover: #007d9c;
+
+
+//MIXINS----------
+//sidebar-mixins
+@mixin sdbr-btn-active {
+    border-right: 5px solid #00f7ff;
+}
+
+// FONTS
+$font-family-roboto: 'Roboto', sans-serif;
+$font-family-sidebar-profile: normal 14px 'PT Sans', sans-serif;
+//btn
+$font-family-btn: normal 17px 'PT Sans', sans-serif;

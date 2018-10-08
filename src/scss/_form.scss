@@ -1,0 +1,122 @@
+.form__item {
+	display: flex;
+	flex-direction: column;
+	margin: 1px 0;
+	padding: 32px 12px;
+	background: #fff;
+
+	.title {
+		padding: 0 0 20px;
+		font-weight: 500;
+		font-size: 18px;
+		text-align: center;
+
+		@media all and (min-width: 768px) {
+			text-align: left;
+		}
+	}
+
+	&:nth-child(1) {
+		background: url(../images/mydetails_fon.png) no-repeat right 250px #fff;
+
+		@media all and (min-width: 768px) {
+			flex-direction: row;
+			background-position: right 85px;
+		}
+	}
+
+	&:nth-child(3) {
+		flex-direction: column;
+
+		> div {
+			flex: 1;
+		}
+
+		@media all and (min-width: 768px) {
+			flex-direction: row;
+		}
+	}
+}
+
+.avatar {
+	flex: 1;
+	height: 135px;
+	background: url(../images/avatar.png) no-repeat center;
+	background-size: contain;
+
+	@media all and (min-width: 768px) {
+		max-width: 135px;
+	}
+}
+
+.checkboxes {
+	display: flex;
+	flex-flow: row wrap;
+	text-transform: uppercase;
+
+	div {
+		margin: 10px 0;
+		width: 33.3%;
+	}
+
+	@media all and (min-width: 510px) {
+		margin: 20px 0;
+	}
+}
+
+.form__item__left {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.color {
+	border-top: 100px solid #e5f034;
+	border-right: 100px solid  #30b639;
+	border-bottom: 100px solid transparent;
+	border-left: 100px solid #b63030;
+	border-radius: 100px;
+	width: 0;
+	height: 0;
+}
+
+.lvlgraph {
+	position: absolute;
+	margin-top: 50px;
+	border-radius: 100px;
+	width: 100px;
+	height: 100px;
+	background: url(../images/arrow.png) no-repeat  left #fff;
+	background-size: 40%;
+}
+
+.form__item__right {
+	display: flex;
+	flex-direction: column;
+
+	.result {
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0;
+		font-size: 18px;
+
+		span {
+			font-weight: 700;
+			font-size: 65px;
+			color: #0093d7;
+		}
+	}
+}
+
+.mydetails {
+	flex: 1;
+
+	&::placeholder {
+		text-transform: uppercase;
+		color: #666;
+	}
+
+	@media all and (min-width: 768px) {
+		padding-left: 20px;
+	}
+}

@@ -1,0 +1,11 @@
+.sw-header {
+	display: flex;
+	width: 100%;
+	border-bottom: 1px solid $secondclr;
+	color: #fff;
+	
+	&__profile {
+		flex: 1;
+		max-width: 200px;
+	}
+}

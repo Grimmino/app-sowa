@@ -1,0 +1,53 @@
+input {
+	outline: none;
+	border: none;
+	text-transform: uppercase;
+	background: none;
+
+	&[type="text"] {
+		margin: 0 0 30px;
+		outline: none;
+		border: none;
+		border-bottom: 2px solid #333;
+		padding-bottom: 7px;
+		width: 100%;
+		height: 1rem;
+		box-shadow: none;
+		font-family: $font-family-roboto;
+		font-weight: 500;
+		font-size: 12px;
+		background: none;
+	}
+
+	&[type="checkbox"] {
+		display: none;
+		border: none;
+		background: #0093d7;
+	}
+
+	&[type="checkbox"] + label span {
+		display: inline-block;
+		vertical-align: middle;
+		margin: -1px 4px 0 0;
+		border-radius: 5px;
+		width: 15px;
+		height: 15px;
+		background: #eee;
+		cursor: pointer;
+	}
+
+	&[type="checkbox"]:checked + label span {
+		background: url(../images/cheked.png) no-repeat center #0093d7;
+		background-size: 70%;
+	}
+}
+
+label {
+	font-weight: 500;
+	font-size: 8px;
+	color: #666;
+
+	@media all and (min-width: 510px) {
+		font-size: 12px;
+	}
+}

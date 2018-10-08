@@ -1,0 +1,26 @@
+// stylelint-disable at-rule-empty-line-before
+
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "sprites";
+@import "fonts";
+@import "vendor";
+@import "base";
+@import "input";
+@import "form";
+//header
+@import "app/sw-header/sw-header";
+@import "app/sw-header/sw-nav";
+//page
+@import "app/sw-page/sw-page";
+//sidebar
+@import "app/sw-page/sw-sidebar/sw-sidebar.scss";
+//content
+@import "app/sw-page/sw-content/sw-content.scss";
+//lib
+@import "app/lib/lib.scss";
+//buttons
+@import "app/lib/buttons.scss";
+//popups
+@import "app/lib/popups.scss";

@@ -1,0 +1,48 @@
+.sw-content {
+    width: 100%;
+    display: flex;
+
+    &__item {
+        flex: 1;
+    }
+}
+
+.todo {
+    flex: 1;
+
+    ul {
+        margin: 0;
+    }
+
+    &__item {
+        display: flex;
+        width: calc(100% - 10px);
+        padding: 5px 10px;
+        margin: 5px;
+        background: #02a1c9;
+
+        &__text { 
+            flex: 1;
+        }
+
+        &__close { 
+            width: 100px;
+            cursor: pointer;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    &__add {
+
+        input {
+            background: #fff;
+        }
+
+        button {
+            background: #0073df;
+        }
+    }
+}
