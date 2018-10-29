@@ -1,0 +1,224 @@
+.sidebar {
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    max-width: 300px;
+    border-right: 1px solid $secondclr;
+  
+    &__profile {
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background: $sp-clr;
+        height: 100vh;
+        &-active {
+            display: block;
+        }
+    }
+
+    &__main {
+        height: calc(100vh - 51px);
+        min-height: 500px;
+        background: linear-gradient(135deg, $mainclr, 80%, $secondclr);
+        width: 300px;
+    }
+}
+
+.sw-profile {
+
+    &__avatar {
+        display: flex;
+        justify-content: center;
+        padding: 50px 0 0 0;
+
+        &__img {
+            width: 130px;
+            height: 130px;
+            background: url(../img/facecircle.jpg) center;
+            background-size: cover;
+            border-radius: 150px;
+            box-shadow:  0 0 0 3px $sm-clr,
+                         0 0 0 6px $sm-clr;
+        }
+    }
+
+    &__contacts {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+        color: #fff;
+        font: $sm-clr;
+
+        &__aboutme {
+            display: flex;
+
+            >:nth-child(1) {
+                text-align: right;
+                padding-right: 10px;  
+                border-right: 1px dotted #fff;          
+            }
+
+            >:nth-child(2) {
+                text-align: left;
+                padding-left: 10px;   
+            }
+
+            > div {
+                flex: 1;
+
+                h3 {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 12px;
+                    font: $sm-clr;
+                }
+            }
+        }
+    
+        &__name {
+            font-weight: 100;
+            color:$sm-clr;
+            padding: 10px 0 20px 0;
+            font-style: normal;
+
+            a {
+                color: $sm-clr;
+                font: $sm-clr;
+                cursor: auto;
+            }
+        }
+    
+        &__title {
+            color: $sm-clr;
+            font-size: 15px;
+            font-weight: 300;
+            padding: 25px 0 5px 0;
+        }
+    
+        &__text {
+            padding: 0 10px;
+            text-align: justify;
+        }
+    }
+}
+
+.createlist {
+    position: relative;
+    color: $sm-clr__font;
+
+    input {
+        outline: none;
+        flex: 1;
+        padding-left: 5px;
+        background: $mainclr;
+        border: none;
+        color: $sm-clr__btn;
+        &::placeholder {
+            color: $sm-clr__btn-placeholder;
+        }
+    }
+    button {
+        font-size: 10px;
+        cursor: pointer;
+        background: $secondclr;
+        border: none;
+        outline: none;
+        &:hover {
+            background: #00d800;
+        }
+    }
+    ul {
+        padding: 0;
+    }
+
+    &__form {
+        display: flex;
+        background: $mainclr;
+        padding: 15px 10px;
+        border-bottom: 1px dashed $secondclr;
+    }
+
+    .list-item {
+        display: flex;
+        color: $mainclr;
+        padding: 10px 0 10px 5px;
+        background: $secondclr;
+        border-bottom: 1px solid $mainclr;
+        cursor: pointer;
+
+        &__chose {
+            background: red;
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+        }
+
+        &__name {
+            flex: 1;
+            padding-left: 10px;
+        }
+
+        &__options {
+            background: blue;
+            width: 30px;
+
+            &__active {
+                position: absolute;
+                padding: 10px 0 0 0;
+                width: 200px;
+                background: #fff;
+                right: -220px;
+            }
+
+            &__item {
+                text-align: center;
+                padding: 3px 0;
+                &:hover {
+                    background: #cfcfcf;
+                }
+                &:nth-last-child(1) {
+                    color: #fff;
+                    background: red;
+                }
+            }
+        }
+    }
+
+}
+
+.list {
+
+    &__item {
+        text-align: center;
+        padding: 7px 0;
+        background: $btn;
+        cursor: pointer;
+        position: relative;
+        margin: 2px 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            z-index: 1;
+            opacity: 0;
+            transition: all .2s ease-out;
+            transform: translateY(-50%);
+            border-left: 15px solid $btn-hover;
+            border-bottom: 15px solid transparent;
+            border-top: 15px solid transparent;
+        }
+
+        &:hover {
+            background: $btn-hover;
+            color: #fff;
+
+            &::after {
+                opacity: 1;
+                right: -16px;
+            }
+        }
+    }
+}

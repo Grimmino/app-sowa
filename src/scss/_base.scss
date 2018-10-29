@@ -4,19 +4,24 @@
 	box-sizing: inherit;
 	margin: 0;
 }
-
 html {
 	box-sizing: border-box;
 }
-
 body {
 	margin: 0;
-	background: linear-gradient(45deg, $secondclr, $mainclr);
+	background: $mainclr;
+	font-weight: normal;
+	color: $secondclr;
 }
 
-.form {
-	display: flex;
-	flex-flow: column wrap;
-	margin: 0 auto;
-	max-width: 662px;
+.page {
+	&__header {
+		width: 100%;
+		background: linear-gradient(45deg, $mainclr, 70%, $secondclr);
+		border-bottom: 1px solid $secondclr;
+	}
+
+	&__layout {
+		width: 100%;
+	}
 }

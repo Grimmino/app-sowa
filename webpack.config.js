@@ -1,48 +1,38 @@
-//basik vars - переменные
-const path = require('path');
+let path = require('path');
+
 const webpack = require('webpack');
 
-
-//additional plugins - доп. плагины
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var isProduction = (process.env.NODE_ENV === 'production');
 
 
-//module settings - настройка модуля
-module.exports = {
-    //базовый путь к проекту
-    context: path.resolve(__dirname, 'src'),
+let conf = {
+    entry: './src/index.js',
 
-    //точки входы js
-    entry: {
-        //основной файл приложения
-        app: [
-            './js/app.js',
-            './scss/style.scss'
-        ],
-    },
-
-    //путь для собранных файлов
     output: {
-        filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '../'
+        filename: 'js/[name].js',
+        publicPath: '',
     },
 
-    //devserver configuration
     devServer: {
-        contentBase: './app'
+        overlay: true,
+        contentBase: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
+        hot: true
     },
-
-    devtool: (isProduction) ? '' : 'inline-source-map',
 
     module: {
         rules: [
+            //babel
+            {
+                test: /\.(js|jsx)$/,
+                exclude: '/node_modules/',
+                loader: 'babel-loader'
+            },
             //scss
             {
                 test: /\.(sa|sc|c)ss$/,
@@ -50,71 +40,67 @@ module.exports = {
                     'style-loader',
                     MiniCssExtractPlugin.loader,
                     {
-                        loader: 'css-loader',
-                        options: { sourceMap: true }
+                        loader: 'css-loader'
                     },
                     {
-                        loader: 'postcss-loader',
-                        options: {sourceMap: true }
+                        loader: 'postcss-loader'
                     },
 
                     {
-                        loader: 'sass-loader',
-                        options: {sourceMap: true }
+                        loader: 'sass-loader'
                     },
                 ],
             },
 
-            // Image
+            // image
             {
-                test: /\.(png|gif|jpg?g)$/,
-                loaders: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]',
-                        },
-                    },
-                    'img-loader',
-                ]
+                test: /\.(png|jpg|gif)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: '[path][name].[ext]',
+                }
             },
 
-            //Fonts
+            //fonts
             {
-                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                 use: [
-                     {
-                         loader: 'file-loader',
-                         options: {
-                             name: '[path][name].[ext]',
-                         }
-                     },
-                 ]
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: '[path][name].[ext]',
+                }
             },
 
-            //SVG
+            //svg
             {
-                test:/\.svg$/,
-                loader: 'svg-url-loader',
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
+
+            //pug
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                options: {
+                    pretty: true
+                }
             },
         ],
     },
 
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
+
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            jquery: 'jquery'
-        }),
         new MiniCssExtractPlugin({
-            filename: "./css/[name].css",
+            filename: "css/style.css",
         }),
-
         new CleanWebpackPlugin(['dist']),
-
         new CopyWebpackPlugin(
             [
-                {from: './img', to: 'img'}
+                {from: './src/img', to: 'img'}
             ],
             {
                 ignore: [
@@ -122,28 +108,19 @@ module.exports = {
                 ]
             }
 
-        )
-    ],
+        ),
+        new HtmlWebpackPlugin({
+            filename: path.resolve(__dirname, 'dist/index.html'),
+            template: path.resolve(__dirname, './src/index.pug'),
+        }),
+    ]
 };
 
+module.exports = (env, options) => {
+    let production = options.mode === 'production';
 
-//PRODUCTION ONLY
-if (isProduction) {
-    module.exports.plugins.push(
-        new UglifyJSPlugin({
-            sourceMap: true
-        }),
-    );
-
-    module.exports.plugins.push(
-        new ImageminPlugin({
-            test: /\.(png|jpe?g|gif|svg)$/,
-        }),
-    );
-
-    module.exports.plugins.push(
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        }),
-    );
+    conf.devtool = production 
+                    ? 'source-map'
+                    : 'eval-sourcemap';
+    return conf;
 }

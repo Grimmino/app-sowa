@@ -1,36 +1,41 @@
-// stylelint-disable scss/dollar-variable-empty-line-before
-
 // COLORS----------
 //base
-$mainclr: #053850;
-$secondclr: #1fa1a5;
+$mainclr: #221930;
+$secondclr: #00dce4;
+$rareclr: #00dce4c7;
 
-//sidebar
-$sdbr-btn-clr: #2f89b3;
-$sdbr-btn-clr-hover: #2d3e46;
-//sidebar-profile
-$profile-font-clr: #ffffff;
-$profile-title-clr: #00aeff;
-$profile-mainclr: #002a3d;
-$profile-secondclr: #177ead;
+//s-sidebar
+$s-clr: $mainclr;
+$s-clr__btn: #2f89b3;
+$s-clr__btn-hover: #2d3e46;
+
+//sm-sidebar-main
+$sm-clr: $mainclr;
+//sm-sidebar-main-btn
+$sm-clr__btn: #fff;
+$sm-clr__btn-hover: #d8d8d8;
+$sm-clr__btn-placeholder: #e0e0e0;
+//sm-sidebar-main-font
+$sm-clr__font: #fff;
+$sm-clr__font-hover: #000;
+
+//sp-sidebar-profile
+$sp-clr: #021f2c;
+$sp-clr__font: #00aeff;
+
 
 //btn
-$bgclr: #000;
-$bgclr-hover: #fff;
-//sidebar-btn
-//sm-sidebarmain
-$sm-bgclr: #000;
-$sm-bgclr-hover: #007d9c;
+$btn: #2f89b3;
+$btn-hover: #2d3e46;
 
 
 //MIXINS----------
 //sidebar-mixins
-@mixin sdbr-btn-active {
-    border-right: 5px solid #00f7ff;
-}
 
 // FONTS
 $font-family-roboto: 'Roboto', sans-serif;
 $font-family-sidebar-profile: normal 14px 'PT Sans', sans-serif;
+
+$font-family-navigo: 'Navigo', sans-serif;
 //btn
 $font-family-btn: normal 17px 'PT Sans', sans-serif;

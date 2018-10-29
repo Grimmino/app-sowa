@@ -3,14 +3,5 @@
     text-align: center;
     font: $font-family-btn;
     cursor: pointer;
-    background: $bgclr;
-}
-
-#createlist {
-    background: $sm-bgclr;
-    padding: 10px 0;
-
-    &:hover {
-        background: $sm-bgclr-hover;
-    }
+    background: $btn;
 }

@@ -1,38 +1,18 @@
-//vars
-@import "../fonts/fonts.scss";
-//fonts
-@import "../../app/vars/vars.scss";
+@import "variables";
+@import "fonts";
+@import "base";
+@import "input";
 //header
-@import "../../app/sw-header/sw-header.scss";
-@import "../../app/sw-header/logo/logo.scss";
-@import "../../app/sw-header/profile/profile.scss";
-@import "../../app/sw-header/burger/burger.scss";
-
-//page
-@import "../../app/sw-page/sw-page.scss";
-//page - sidebar
-@import "../../app/sw-page/sidebar/sidebar.scss";
-@import "../../app/sw-page/sidebar/sidebar__profile/sidebar__profile.scss";
-
-@import "../../app/sw-page/sidebar/sw-sidebar/sw-sidebar.scss";
-//page - content
-@import "../../app/sw-page/content/content.scss";
-
+@import "app/header/header";
+//layout
+@import "app/layout/layout";
+//sidebar
+@import "app/layout/sidebar/sidebar";
+//content
+@import "app/layout/content/content";
+//lib
+@import "app/lib/lib";
 //buttons
-@import "../../app/btn/btn.scss";
-
-//popup
-@import "../../app/popup/popup.scss";
-
-//media
-@import "../../app/media/media.scss";
-
-//light mode
-@import "../../app/light/light.scss";
-
-
-
-body {
-  margin: 0;
-  background: linear-gradient(45deg, $secondclr, $mainclr);
-}
+@import "app/lib/buttons";
+//popups
+@import "app/lib/popups";

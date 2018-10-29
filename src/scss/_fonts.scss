@@ -1,14 +1,21 @@
-// stylelint-disable no-empty-source
 @font-face {
-	src: url('../fonts/Roboto/Roboto.eot');
+    font-family: 'Navigo';
 	src:
-		url('../fonts/Roboto/Roboto.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/Roboto/Roboto.woff2') format('woff2'),
-		url('../fonts/Roboto/Roboto.woff') format('woff'),
-		url('../fonts/Roboto/Roboto.ttf') format('truetype');
-	font-family: 'Roboto';
+        url('../fonts/font_navigo/Navigo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&subset=cyrillic');
+@font-face {
+    font-family: 'Navigo';
+	src:
+        url('../fonts/font_navigo/Navigo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Navigo';
+	src:
+        url('../fonts/font_navigo/Navigo-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}
