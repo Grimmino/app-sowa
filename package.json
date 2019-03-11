@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack  --mode production",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --mode development --open --hot"
+    "start": "webpack-dev-server --mode development --hot"
   },
   "keywords": [],
   "author": "Alexey Sowa",
@@ -48,10 +48,10 @@
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "^3.3.0",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "imagemin-webpack-plugin": "^2.2.0",
+    "imagemin-webpack-plugin": "^2.3.0",
     "jquery": "^3.3.1",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",

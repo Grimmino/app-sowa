@@ -1,0 +1,97 @@
+.header
+	width: 100%
+	//background: linear-gradient(45deg, $mainclr, 70%, $secondclr)
+	//border-bottom: 1px solid $secondclr
+	height: 50px
+	z-index: 999
+	display: flex
+	align-items: center
+	&__void
+		flex: 1
+		display: flex
+		align-items: center
+		height: 100%
+		position: relative
+		&_line
+			height: 1px
+			width: 100%
+			background: $secondclr
+		&:after,
+		&:before
+			content: ''
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			height: 45px
+			width: 45px
+			border-radius: 45px
+		&:after
+			right: -45px
+			border-left: 3px solid $secondclr
+		&:before
+			left: -45px
+			border-right: 3px solid $secondclr
+
+.logo
+	display: flex
+	align-items: center
+	position: relative
+	cursor: pointer
+	color: $secondclr
+	font-size: 20px
+	text-transform: uppercase
+	transition: .3s
+	height: 100%
+	margin: 0 10px
+	z-index: 10
+	&:before
+		position: absolute
+		display: none
+		transform: translateY(-50%)
+		top: 50%
+		left: 0
+		content: ''
+		height: 25px
+		width: 25px
+		background: #fff
+		border-radius: 100%
+	@media all and (min-width: 768px)
+		&:hover
+			padding: 0 0 0 30px
+			transition: .3s
+			&:before
+				display: block
+				left: 0
+	&.active
+		.logo__info
+			transition: .1s
+			visibility: visible
+			top: calc(100% + 10px)
+	//информация обо мне в логотипе
+	&__info
+		visibility: hidden
+		position: absolute
+		height: 300px
+		width: 300px
+		border-radius: 10px
+		background: #fff
+		top: calc(-100% - 100px)
+		left: 50px
+		z-index: 10
+		transition: .1s
+
+//МОБИЛКА
+@media all and (max-width: 768px)
+	.header
+		border-radius: 0% 0% 50% 50% / 0% 0% 30% 30%
+		border-bottom: none
+		background: $secondclr
+	.logo
+		width: 100%
+		color: $mainclr
+		justify-content: center
+		&__info
+			display: block
+			width: 100%
+			left: 50%
+			transform: translateX(-50%)

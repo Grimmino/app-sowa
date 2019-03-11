@@ -1,0 +1,48 @@
+.miniprofile
+    cursor: pointer
+    height: 45px
+    display: flex
+    align-items: center
+    background: $secondclr
+    border-radius: 45px
+    margin: 0 10px
+    overflow: hidden
+    z-index: 10
+    &.active
+        .miniprofile__nav
+            padding: 0 10px
+            width: max-content
+    &__avatar
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        &_img
+            width: 45px
+            height: 45px
+            background: #fff
+            border-radius: 100%
+    &__nav
+        display: flex
+        height: 100%
+        width: 0
+        align-items: center
+        position: relative
+        span
+            color: #fff
+        &.active
+            .miniprofile__options
+                display: flex
+    &__options
+        display: none
+        position: absolute
+        top: 100%
+        right: 0
+        flex-direction: column
+        background: #fff
+        z-index: 100
+        min-width: max-content
+        li
+            padding: 10px 5px
+            &:hover
+                background: red

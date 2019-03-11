@@ -12,7 +12,7 @@ export default class Desk extends Component {
         return (
             <div>
                 <DeskArr items = {this.state.items} />
-                <form className='createlist__form' onSubmit={this.handleSubmit}>
+                <form className='boards__form' onSubmit={this.handleSubmit}>
                     <input
                         id="new-todo"
                         onChange={this.handleChange}

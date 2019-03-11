@@ -1,0 +1,45 @@
+.boards
+    &__form
+        display: flex
+        input
+            border: none
+            flex: 1
+            padding: 5px 0 5px 10px
+            font-size: 15px
+            font-weight: 400
+            &::placeholder
+                color: $s-clr__btn
+        button
+            cursor: pointer
+            padding: 0 10px
+            border: none
+            background: $s-clr__btn-hover
+            color: #fff
+    &__item
+        position: relative
+        display: flex
+        line-height: 30px
+        &:not(:last-child)
+            border-bottom: 1px dashed $secondclr
+        &_menu
+            position: absolute
+            width: 100%
+            left: calc(100% - 30px)
+            top: 100%
+            background: #ffffff
+            padding: 0 30px
+            > div
+                > div
+                    width: auto
+    &__name
+        flex: 1
+        padding-left: 5px
+        font-size: 12px
+        cursor: pointer
+    &__options
+        cursor: pointer
+        height: 30px
+        width: 30px
+        border: none
+        background: green
+        border-radius: 100%

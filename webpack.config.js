@@ -22,7 +22,7 @@ let conf = {
         overlay: true,
         contentBase: path.resolve(__dirname, 'dist'),
         publicPath: '/',
-        hot: true
+        //hot: true
     },
 
     module: {
@@ -33,7 +33,7 @@ let conf = {
                 exclude: '/node_modules/',
                 loader: 'babel-loader'
             },
-            //scss
+            //sass
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
@@ -79,13 +79,13 @@ let conf = {
             },
 
             //pug
-            {
+            /*{
                 test: /\.pug$/,
                 loader: 'pug-loader',
                 options: {
                     pretty: true
                 }
-            },
+            },*/
         ],
     },
 
@@ -111,7 +111,7 @@ let conf = {
         ),
         new HtmlWebpackPlugin({
             filename: path.resolve(__dirname, 'dist/index.html'),
-            template: path.resolve(__dirname, './src/index.pug'),
+            template: path.resolve(__dirname, './src/index.html'),
         }),
     ]
 };

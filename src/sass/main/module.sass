@@ -1,0 +1,43 @@
+.module
+    position: relative
+    display: flex
+    flex-direction: column
+    flex: 1
+    margin: 5px
+    &:not(:first-child)
+        margin-top: 20px
+    &__title
+        padding-left: 10px
+        margin-bottom: 15px
+        display: flex
+        h2
+            flex: 1
+    &__toggler
+        display: flex
+        align-items: center
+        max-width: min-content
+        cursor: pointer
+        &:hover
+            color: #fff
+    &__inner
+        border-radius: 5px
+        background: #f4f4f4
+        padding: 5px
+        flex: 1
+    &__options
+        display: none
+        top: 0
+        right: 0
+        position: absolute
+        width: 200px
+        background: #fff
+        padding: 7px
+        border-radius: 5px
+        li
+            cursor: pointer
+            &:hover
+                color: red
+            &:not(:last-child)
+                margin-bottom: 5px
+        &--show
+            display: block

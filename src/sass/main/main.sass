@@ -1,0 +1,39 @@
+.main
+    display: flex
+    position: relative
+    min-height: calc(100vh - 50px)
+    &__hint
+        flex: 1
+    &__toogler
+        cursor: pointer
+        width: 100%
+        //background: $secondclr
+        padding: 0 0 0 20px
+        &:hover
+            color: #000
+    &__content
+        display: flex
+        flex: 1
+        padding: 5px
+        font-weight: 400
+        font-size: 11px
+        min-height: calc(100% - 20px)
+        &--active
+            opacity: 1
+    &__left
+        flex: 1
+        border-right: 1px dashed #fff
+        padding-right: 5px
+    &__right
+        flex: 1
+        max-width: 300px
+        padding-left: 5px
+//TABLET
+@media screen and (max-width: 1200px)
+    .main
+        &__right
+            max-width: 250px
+//MOBILE
+@media screen and (max-width: 768px)
+    .main
+        display: none

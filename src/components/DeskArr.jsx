@@ -15,17 +15,15 @@ export default class DeskArr extends Component {
     render() {
         const deskOptions = this.state.itemSelectedId && <DeskOptions itemSelectedId={this.state.itemSelectedId}/>
         return (
-            <div>
-                <ul>
-                    {this.props.items.map(item => (
-                        <li key={item.id} className='list-item'>
-                            <span className='list-item__name'>{item.text}</span>
-                            <button  className='list-item__options' onClick={()=>this.toggleOptions(item.id)}></button>
-                            <div id={item.id}>{deskOptions}</div>
-                        </li>
-                    ))}
-                </ul>
-          </div>
+            <ul className='boards'>
+                {this.props.items.map(item => (
+                    <li key={item.id} className='boards__item'>
+                        <span className='boards__name'>{item.text}</span>
+                        <button  className='boards__options' onClick={()=>this.toggleOptions(item.id)}></button>
+                        <div className='boards__item_menu' id={item.id}>{deskOptions}</div>
+                    </li>
+                ))}
+            </ul>
         );
     }
 }
